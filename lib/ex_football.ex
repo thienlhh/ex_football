@@ -1,5 +1,6 @@
 defmodule ExFootball do
   @moduledoc """
+  Elixir client for football-data.org
   """
   def fetch(client, resource, sub_resource \\ :empty, params \\ []) do
     client
