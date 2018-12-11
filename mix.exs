@@ -26,19 +26,22 @@ defmodule ExFootball.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.4"},
-      {:poison, "~> 4.0"}
+      {:poison, "~> 4.0"},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 
   defp description do
-    "Elixir client for football-data.org"
+    """
+    Elixir client for football-data.org
+    """
   end
 
   defp package do
     [
       # This option is only needed when you don't want to use the OTP application name
       name: "ex_football",
-      maintainers: "Thien Le",
+      maintainers: ["Thien Le"],
       # These are the default files included in the package
       files: ~w(lib .formatter.exs mix.exs README* LICENSE*),
       licenses: ["MIT"],
