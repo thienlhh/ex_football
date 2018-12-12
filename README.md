@@ -1,6 +1,6 @@
 # ExFootball
 
-**TODO: Add description**
+**WIP**
 
 ## Installation
 
