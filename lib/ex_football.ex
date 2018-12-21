@@ -2,36 +2,52 @@ defmodule ExFootball do
   @moduledoc """
   Elixir client for football-data.org
   """
-  def fetch(client, resource, sub_resource \\ :empty, params \\ []) do
-    client
-    |> build_uri(resource, sub_resource, params)
-    |> HTTPoison.get("x-auth-token": client.api_token)
+
+  use HTTPoison.Base
+
+  @end_point "http://api.football-data.org/v2"
+
+  def fetch(api_token, resource, sub_resource \\ "", params \\ []) do
+    build_url(resource, sub_resource, params)
+    |> append_params(params)
+    |> ExFootball.get("x-auth-token": api_token)
     |> handle_response()
   end
 
-  def build_uri(client, resource, sub_resource, params) do
-    uri = "#{client.api_uri}/#{resource}"
-    filter = build_params(params)
+  def process_url(url) do
+    @end_point <> url
+  end
 
-    case params do
-      [{:id, resource_id} | _rest] -> uri <> "/#{resource_id}/#{sub_resource}/?#{filter}"
-      ^params -> uri <> "/?#{filter}"
+  def process_headers(headers) do
+    case headers do
+      [{"x-auth-token", _}] -> headers
+      _ -> []
     end
   end
 
-  def handle_response({:ok, %{status_code: status_code, body: body}}) do
+  defp handle_response({:ok, %{status_code: status_code, body: body}}) do
     {
       status_code |> check_status(),
       body |> Poison.Parser.parse!(%{})
     }
   end
 
-  def handle_response({:error, error}), do: {:error, error}
+  defp handle_response({:error, error}), do: {:error, error}
 
-  defp build_params(params) do
-    params
-    |> Enum.map(&compile_param/1)
-    |> Enum.join("&")
+  defp build_url(resource, sub_resource, params) do
+    case Keyword.get(params, :id) do
+      nil -> "/#{resource}"
+      resource_id -> "/#{resource}/#{resource_id}/#{sub_resource}"
+    end
+  end
+
+  defp append_params(url, params) do
+    filter =
+      params
+      |> Enum.map(&compile_param/1)
+      |> Enum.join("&")
+
+    url <> "?#{filter}"
   end
 
   defp compile_param({key, value}) when key != :id do
