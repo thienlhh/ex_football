@@ -26,3 +26,5 @@ ex_football-*.tar
 
 .vscode
 
+/config/secret.exs
+

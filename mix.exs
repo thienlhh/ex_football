@@ -4,14 +4,15 @@ defmodule ExFootball.MixProject do
   def project do
     [
       app: :ex_football,
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: description(),
       package: package(),
       source_url: "https://github.com/thienlhh/ex_football",
-      name: "ExFootball"
+      name: "ExFootball",
+      test_coverage: [tool: ExCoveralls],
     ]
   end
 
@@ -27,7 +28,8 @@ defmodule ExFootball.MixProject do
     [
       {:httpoison, "~> 1.4"},
       {:poison, "~> 4.0"},
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:excoveralls, "~> 0.10", only: :test},
     ]
   end
 
