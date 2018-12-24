@@ -1,28 +1,40 @@
 defmodule ExFootball do
   @moduledoc """
-  Elixir client for football-data.org
+  Simple Elixir client for football-data.org API v2
   """
-
-  use HTTPoison.Base
 
   @end_point "http://api.football-data.org/v2"
 
+  @doc """
+  Fetch data from football-data resources
+
+  ## Examples
+    Get all competitions
+    ```
+    > ExFootball.fetch("api_token", "competitions")
+    ```
+
+    Get upcoming matches for Premier League
+    ```
+    > ExFootball.fetch("api_token", "competitions", "matches", [id: "PL", status: "SCHEDULED"])
+    ```
+
+    Get all matches of the Champions League
+    ```
+    > ExFootball.fetch("api_token", "competitions", "matches", [id: "CL"])
+    ```
+  """
+  @spec fetch(binary, binary, binary, Keyword.t) :: {:ok, term} | {:error, term}
   def fetch(api_token, resource, sub_resource \\ "", params \\ []) do
-    build_url(resource, sub_resource, params)
+    build_uri(resource, sub_resource, params)
     |> append_params(params)
-    |> ExFootball.get("x-auth-token": api_token)
+    |> process_url()
+    |> HTTPoison.get("x-auth-token": api_token)
     |> handle_response()
   end
 
-  def process_url(url) do
+  defp process_url(url) do
     @end_point <> url
-  end
-
-  def process_headers(headers) do
-    case headers do
-      [{"x-auth-token", _}] -> headers
-      _ -> []
-    end
   end
 
   defp handle_response({:ok, %{status_code: status_code, body: body}}) do
@@ -34,10 +46,13 @@ defmodule ExFootball do
 
   defp handle_response({:error, error}), do: {:error, error}
 
-  defp build_url(resource, sub_resource, params) do
+  defp build_uri(resource, sub_resource, params) do
     case Keyword.get(params, :id) do
-      nil -> "/#{resource}"
-      resource_id -> "/#{resource}/#{resource_id}/#{sub_resource}"
+      resource_id when is_bitstring(resource_id) ->
+        "/#{resource}/#{resource_id}/#{sub_resource}"
+
+      nil ->
+        "/#{resource}"
     end
   end
 
