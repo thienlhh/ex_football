@@ -1,9 +1,5 @@
 defmodule ExFootball.Player do
-  use ExFootball, :helper
-
-  def all!(client, filters \\ []) do
-    client |> get!("/players#{build_filters(filters)}")
-  end
+  use ExFootball
 
   def find!(client, id) do
     client |> get!("/players/#{id}")

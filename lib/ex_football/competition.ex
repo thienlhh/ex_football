@@ -1,5 +1,5 @@
 defmodule ExFootball.Competition do
-  use ExFootball, :helper
+  use ExFootball
 
   def all!(client, filters \\ []) do
     client |> get!("/competitions#{build_filters(filters)}")

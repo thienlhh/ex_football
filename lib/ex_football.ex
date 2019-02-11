@@ -4,15 +4,10 @@ defmodule ExFootball do
   """
 
   @doc false
-  def helper do
+  defmacro __using__(_opts) do
     quote do
       import ExFootball.Client
       import ExFootball.Filters
     end
-  end
-
-  @doc false
-  defmacro __using__(which) when is_atom(which) do
-    apply(__MODULE__, which, [])
   end
 end

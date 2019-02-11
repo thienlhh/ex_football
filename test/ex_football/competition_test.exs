@@ -1,7 +1,7 @@
 defmodule ExFootball.CompetitionTest do
   use ExUnit.Case, async: true
 
-  setup do
+  setup_all do
     api_token = Application.get_env(:ex_football, :api_token)
     {:ok, client: ExFootball.Client.new(api_token)}
   end
@@ -33,7 +33,9 @@ defmodule ExFootball.CompetitionTest do
       res = context[:client] |> ExFootball.Competition.find!(2006)
 
       assert res.status == 403
-      assert res.body["message"] == "The resource you are looking for is restricted. Please pass a valid API token and check your subscription for permission."
+
+      assert res.body["message"] ==
+               "The resource you are looking for is restricted. Please pass a valid API token and check your subscription for permission."
     end
   end
 

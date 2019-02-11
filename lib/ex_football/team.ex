@@ -1,5 +1,5 @@
 defmodule ExFootball.Team do
-  use ExFootball, :helper
+  use ExFootball
 
   def all!(client) do
     client |> get!("/teams")
