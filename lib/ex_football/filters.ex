@@ -1,4 +1,5 @@
 defmodule ExFootball.Filters do
+  @moduledoc false
   def build_filters(filters) when length(filters) > 0 do
     res =
       filters

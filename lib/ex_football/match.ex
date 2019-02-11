@@ -5,7 +5,7 @@ defmodule ExFootball.Match do
     client |> get!("/matches#{build_filters(filters)}")
   end
 
-  def find!(client, id, filters \\ []) do
-    client |> get!("/matches/#{id}#{build_filters(filters)}")
+  def find!(client, id) do
+    client |> get!("/matches/#{id}")
   end
 end

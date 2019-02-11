@@ -22,9 +22,5 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 ex_football-*.tar
 
-.elixir_ls
-
-.vscode
-
 /config/secret.exs
 
