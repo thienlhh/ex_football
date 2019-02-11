@@ -1,23 +1,32 @@
 defmodule ExFootball.Client do
+  @moduledoc """
+  Struct which represents the ExFootball client
+  """
   defstruct api_token: nil
 
   @end_point "http://api.football-data.org/v2"
 
+  @doc """
+  Create new Exfootball client
+
+  ## Examples:
+  ```
+  iex> client = ExFootball.Client.new("api_token")
+  %ExFootball.Client{api_token: "api_token"}
+  ```
+
+  """
   def new(api_token) do
     %__MODULE__{api_token: api_token}
   end
 
-  def set_api_token(%__MODULE__{} = client, new_token) do
-    Map.put(client, :api_token, new_token)
-  end
-
   def get!(client, path) do
-      process_url(path)
-      |> HTTPoison.get!("x-auth-token": client.api_token)
-      |> process_response()
+    process_url(path)
+    |> HTTPoison.get!("x-auth-token": client.api_token)
+    |> process_response()
   end
 
-  def from_json!(data) do
+  defp from_json!(data) do
     Poison.decode!(data)
   end
 

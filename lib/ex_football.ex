@@ -1,6 +1,6 @@
 defmodule ExFootball do
   @moduledoc """
-  Simple Elixir client for football-data.org API v2
+  Simple Elixir client for football-data.org [API v2](https://www.football-data.org/documentation/api).
   """
 
   @doc false
