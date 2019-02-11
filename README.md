@@ -14,7 +14,7 @@ by adding `ex_football` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:ex_football, "~> 0.2.0"}
+    {:ex_football, "~> 0.3.0"}
   ]
 end
 ```
@@ -22,22 +22,6 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/ex_football](https://hexdocs.pm/ex_football).
-
-## Usage
-Get all competitions
-```
-> ExFootball.fetch("api_token", "competitions")
-```
-
-Get upcoming matches for Premier League
-```
-> ExFootball.fetch("api_token", "competitions", "matches", [id: "PL", status: "SCHEDULED"])
-```
-
-Get all matches of the Champions League
-```
-> ExFootball.fetch("api_token", "competitions", "matches", [id: "CL"])
-```
 
 ## Contribution
 Clone repository
