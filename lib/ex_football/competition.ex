@@ -1,6 +1,6 @@
 defmodule ExFootball.Competition do
   @moduledoc """
-  Football data competition resources [Compitition](www.football-data.org/documentation/api#competition)
+  Football data [competition](www.football-data.org/documentation/api#competition)
   """
 
   use ExFootball
