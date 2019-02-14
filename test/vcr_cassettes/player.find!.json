@@ -1,0 +1,36 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "x-auth-token": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "http://api.football-data.org/v2/players/2019"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"id\":2019,\"name\":\"Gianluigi Buffon\",\"firstName\":\"Gianluigi\",\"lastName\":null,\"dateOfBirth\":\"1978-01-28\",\"countryOfBirth\":\"Italy\",\"nationality\":\"Italy\",\"position\":\"Goalkeeper\",\"shirtNumber\":1,\"lastUpdated\":\"2019-02-14T05:10:09Z\"}",
+      "headers": {
+        "Server": "nginx/1.6.2",
+        "Date": "Thu, 14 Feb 2019 12:56:28 GMT",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "X-Application-Context": "application:production",
+        "X-Requests-Available-Minute": "9",
+        "X-RequestCounter-Reset": "60",
+        "X-API-Version": "v2",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET",
+        "X-Authenticated-Client": "Thien Le",
+        "Content-Language": "en-US"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

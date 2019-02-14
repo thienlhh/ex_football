@@ -26,6 +26,14 @@ use Mix.Config
 # by uncommenting the line below and defining dev.exs, test.exs and such.
 # Configuration from the imported file will override the ones defined
 # here (which is why it is important to import them last).
-#
 
-import_config "secret.exs"
+config :exvcr,
+  vcr_cassette_library_dir: "test/vcr_cassettes",
+  filter_sensitive_data: [],
+  filter_url_params: false,
+  filter_request_headers: ["x-auth-token"],
+  response_headers_blacklist: []
+
+if File.exists?("secret.exs") do
+  import_config "secret.exs"
+end

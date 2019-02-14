@@ -1,0 +1,36 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "x-auth-token": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "http://api.football-data.org/v2/competitions/2006"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"message\":\"The resource you are looking for is restricted. Please pass a valid API token and check your subscription for permission.\",\"errorCode\":403}",
+      "headers": {
+        "Server": "nginx/1.6.2",
+        "Date": "Thu, 14 Feb 2019 12:48:36 GMT",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "X-Application-Context": "application:production",
+        "X-Requests-Available-Minute": "9",
+        "X-RequestCounter-Reset": "59",
+        "X-API-Version": "v2",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET",
+        "X-Authenticated-Client": "Thien Le",
+        "Content-Language": "en-US"
+      },
+      "status_code": 403,
+      "type": "ok"
+    }
+  }
+]

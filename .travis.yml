@@ -6,6 +6,3 @@ otp_release:
 env:
 - MIX_ENV=test
 script: mix coveralls.travis
-before_install:
-- openssl aes-256-cbc -K $encrypted_baa3c96b1e33_key -iv $encrypted_baa3c96b1e33_iv
-  -in secret.exs.enc -out config/secret.exs -d

@@ -1,0 +1,29 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "x-auth-token": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "http://api.football-data.org/v2/competitions"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"message\":\"Your API token is invalid.\",\"errorCode\":400}",
+      "headers": {
+        "Server": "nginx/1.6.2",
+        "Date": "Thu, 14 Feb 2019 12:59:19 GMT",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "X-Application-Context": "application:production",
+        "Content-Language": "en-US"
+      },
+      "status_code": 400,
+      "type": "ok"
+    }
+  }
+]

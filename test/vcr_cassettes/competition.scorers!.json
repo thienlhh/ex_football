@@ -1,0 +1,36 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "x-auth-token": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "http://api.football-data.org/v2/competitions/2021/scorers"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"count\":10,\"filters\":{\"limit\":10},\"competition\":{\"id\":2021,\"area\":{\"id\":2072,\"name\":\"England\"},\"name\":\"Premier League\",\"code\":\"PL\",\"plan\":\"TIER_ONE\",\"lastUpdated\":\"2019-02-12T21:10:02Z\"},\"season\":{\"id\":151,\"startDate\":\"2018-08-10\",\"endDate\":\"2019-05-12\",\"currentMatchday\":27,\"winner\":null},\"scorers\":[{\"player\":{\"id\":3754,\"name\":\"Mohamed Salah\",\"firstName\":\"Mohamed Salah\",\"lastName\":null,\"dateOfBirth\":\"1992-06-15\",\"countryOfBirth\":\"Egypt\",\"nationality\":\"Egypt\",\"position\":\"Attacker\",\"shirtNumber\":null,\"lastUpdated\":\"2019-02-14T05:12:27Z\"},\"team\":{\"id\":64,\"name\":\"Liverpool FC\"},\"numberOfGoals\":17},{\"player\":{\"id\":7891,\"name\":\"Sergio Agüero\",\"firstName\":\"Sergio Leonel\",\"lastName\":null,\"dateOfBirth\":\"1988-06-02\",\"countryOfBirth\":\"Argentina\",\"nationality\":\"Argentina\",\"position\":\"Attacker\",\"shirtNumber\":10,\"lastUpdated\":\"2018-09-19T05:07:19Z\"},\"team\":{\"id\":65,\"name\":\"Manchester City FC\"},\"numberOfGoals\":17},{\"player\":{\"id\":7801,\"name\":\"Pierre-Emerick Aubameyang\",\"firstName\":\"Pierre-Emerick Emiliano François\",\"lastName\":null,\"dateOfBirth\":\"1989-06-18\",\"countryOfBirth\":\"France\",\"nationality\":\"Gabon\",\"position\":\"Attacker\",\"shirtNumber\":14,\"lastUpdated\":\"2019-02-14T05:07:37Z\"},\"team\":{\"id\":57,\"name\":\"Arsenal FC\"},\"numberOfGoals\":15},{\"player\":{\"id\":8004,\"name\":\"Harry Kane\",\"firstName\":\"Harry\",\"lastName\":null,\"dateOfBirth\":\"1993-07-28\",\"countryOfBirth\":\"England\",\"nationality\":\"England\",\"position\":\"Attacker\",\"shirtNumber\":null,\"lastUpdated\":\"2019-02-14T05:12:10Z\"},\"team\":{\"id\":73,\"name\":\"Tottenham Hotspur FC\"},\"numberOfGoals\":14},{\"player\":{\"id\":3626,\"name\":\"Sadio Mané\",\"firstName\":\"Sadio\",\"lastName\":null,\"dateOfBirth\":\"1992-04-10\",\"countryOfBirth\":\"Senegal\",\"nationality\":\"Senegal\",\"position\":\"Midfielder\",\"shirtNumber\":null,\"lastUpdated\":\"2019-02-14T05:12:21Z\"},\"team\":{\"id\":64,\"name\":\"Liverpool FC\"},\"numberOfGoals\":12},{\"player\":{\"id\":3329,\"name\":\"Raheem Sterling\",\"firstName\":\"Raheem Shaquille\",\"lastName\":null,\"dateOfBirth\":\"1994-12-08\",\"countryOfBirth\":\"Jamaica\",\"nationality\":\"England\",\"position\":\"Attacker\",\"shirtNumber\":null,\"lastUpdated\":\"2019-02-14T05:12:10Z\"},\"team\":{\"id\":65,\"name\":\"Manchester City FC\"},\"numberOfGoals\":12},{\"player\":{\"id\":3653,\"name\":\"Eden Hazard\",\"firstName\":\"Eden\",\"lastName\":null,\"dateOfBirth\":\"1991-01-07\",\"countryOfBirth\":\"Belgium\",\"nationality\":\"Belgium\",\"position\":\"Midfielder\",\"shirtNumber\":null,\"lastUpdated\":\"2019-02-14T05:12:21Z\"},\"team\":{\"id\":61,\"name\":\"Chelsea FC\"},\"numberOfGoals\":12},{\"player\":{\"id\":3366,\"name\":\"Paul Pogba\",\"firstName\":\"Paul\",\"lastName\":null,\"dateOfBirth\":\"1993-03-15\",\"countryOfBirth\":\"France\",\"nationality\":\"France\",\"position\":\"Midfielder\",\"shirtNumber\":6,\"lastUpdated\":\"2019-02-14T02:33:27Z\"},\"team\":{\"id\":66,\"name\":\"Manchester United FC\"},\"numberOfGoals\":11},{\"player\":{\"id\":3343,\"name\":\"Son Heungmin\",\"firstName\":\"Heungmin\",\"lastName\":null,\"dateOfBirth\":\"1992-07-08\",\"countryOfBirth\":\"Korea Republic\",\"nationality\":\"Korea Republic\",\"position\":\"Midfielder\",\"shirtNumber\":null,\"lastUpdated\":\"2019-02-14T05:12:11Z\"},\"team\":{\"id\":73,\"name\":\"Tottenham Hotspur FC\"},\"numberOfGoals\":11},{\"player\":{\"id\":8251,\"name\":\"Callum Wilson\",\"firstName\":\"Callum\",\"lastName\":null,\"dateOfBirth\":\"1992-02-27\",\"countryOfBirth\":\"England\",\"nationality\":\"England\",\"position\":\"Attacker\",\"shirtNumber\":13,\"lastUpdated\":\"2019-02-14T05:12:43Z\"},\"team\":{\"id\":1044,\"name\":\"AFC Bournemouth\"},\"numberOfGoals\":10}]}",
+      "headers": {
+        "Server": "nginx/1.6.2",
+        "Date": "Thu, 14 Feb 2019 12:48:40 GMT",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "X-Application-Context": "application:production",
+        "X-Requests-Available-Minute": "5",
+        "X-RequestCounter-Reset": "56",
+        "X-API-Version": "v2",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET",
+        "X-Authenticated-Client": "Thien Le",
+        "Content-Language": "en-US"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
