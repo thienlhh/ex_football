@@ -31,13 +31,6 @@ Clone repository
 > mix deps.get
 ```
 
-Create `secret.exs` file in the /config directory, don't forget to add this file to gitignore:
-```
-use Mix.Config
-
-config :ex_football, api_token: "football_data_api_token"
-```
-
 Run test
 ```
 mix test
